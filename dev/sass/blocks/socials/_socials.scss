@@ -1,0 +1,25 @@
+.socials {
+  display: flex;
+
+  &__link {
+    display: flex;
+    margin-right: rem(20);
+    transition: opacity 0.3s;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &__icon {
+    font-size: rem(52);
+
+    @include mq('tablet-small') {
+      font-size: rem(44);
+    }
+  }
+}

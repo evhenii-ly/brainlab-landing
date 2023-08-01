@@ -1,0 +1,20 @@
+.heading--h2 {
+  font-family: $font-family-second;
+  font-weight: 700;
+  font-size: rem(55);
+  line-height: normal;
+  letter-spacing: rem(0.55);
+  text-transform: uppercase;
+
+  @include mq('laptop') {
+    font-size: rem(32);
+    line-height: rem(48);
+    letter-spacing: rem(0.28);
+  }
+
+  @include mq('tablet-small') {
+    font-size: rem(28);
+    line-height: rem(36);
+    letter-spacing: rem(0.28);
+  }
+}

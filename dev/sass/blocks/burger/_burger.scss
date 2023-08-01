@@ -1,0 +1,65 @@
+:root {
+  --burger-size: #{rem(50)};
+}
+
+.burger {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: var(--burger-size);
+  height: var(--burger-size);
+  appearance: none;
+  border: 0;
+  cursor: pointer;
+  transition: opacity 0.3s;
+
+  &:not(&--active):hover {
+    &::before {
+      top: rem(20);
+    }
+
+    &::after {
+      bottom: rem(20);
+    }
+  }
+
+  &::before,
+  &::after {
+    content: '';
+
+    position: absolute;
+
+    width: 100%;
+    height: rem(2);
+    background-color: $white;
+    transition: top 0.3s, bottom 0.3s, transform 0.3s;
+  }
+
+  &::before {
+    top: rem(18);
+  }
+
+  &::after {
+    bottom: rem(18);
+  }
+
+  &--active {
+    &:hover {
+      opacity: 0.7;
+    }
+
+    &::before,
+    &::after {
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &::before {
+      transform: rotate(45deg);
+    }
+
+    &::after {
+      transform: rotate(135deg);
+    }
+  }
+}

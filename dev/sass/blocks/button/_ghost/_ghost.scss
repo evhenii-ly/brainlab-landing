@@ -1,0 +1,10 @@
+.button--ghost {
+  color: $white;
+  border-color: $white;
+
+  &:hover {
+    color: $white;
+    background-color: $gray-darken;
+    border-color: $gray-darken;
+  }
+}

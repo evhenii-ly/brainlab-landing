@@ -1,0 +1,30 @@
+include data
+
+each elem, i in data
+  mixin image()
+    div.section-niches__image-box
+      img(
+        srcset=`./assets/images/niches/${elem.imageName}-@2x.webp 2x`
+        src=`./assets/images/niches/${elem.imageName}.webp`
+        class="section-niches__image"
+        alt=""
+      )
+
+  section.section-niches
+    div.container
+      div(
+        class=i % 2 === 0 ? "section-niches__container": "section-niches__container section-niches__container--mirrored"
+      )
+        if i % 2 !== 0
+          +image
+
+        div.section-niches__content
+          h2.heading.heading--h2.section-niches__heading #{elem.title}
+          p.section-niches__text #{elem.text}
+          a(
+          class="button button--ghost section-niches__button"
+          href="#"
+          ) #{elem.button}
+
+        if i % 2 === 0
+          +image

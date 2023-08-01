@@ -1,0 +1,13 @@
+.form-contact {
+  &__fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: rem(60) rem(30);
+    margin-bottom: rem(40);
+
+    @include mq('tablet-small') {
+      grid-template-columns: 1fr;
+      grid-gap: rem(30);
+    }
+  }
+}

@@ -1,0 +1,18 @@
+doctype html
+html(lang="en")
+  include head
+  body
+    div.app
+      include header
+
+      block main
+
+      include footer
+
+      div(
+        id="backdrop"
+        class="backdrop"
+        aria-hidden="true"
+      )
+
+    script(src="./assets/js/main.js")

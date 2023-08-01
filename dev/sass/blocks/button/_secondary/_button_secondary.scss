@@ -1,0 +1,9 @@
+.button--secondary {
+  color: #272727;
+  background-color: $white;
+
+  &:hover {
+    color: $white;
+    background-color: $color-accent;
+  }
+}

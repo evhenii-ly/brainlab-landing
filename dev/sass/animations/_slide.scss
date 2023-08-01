@@ -1,0 +1,52 @@
+@keyframes slideShow {
+  0% {
+    transform: translateX(100%);
+  }
+
+  50% {
+    transform: translateX(-3%);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideHide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideShowModal {
+  0% {
+    left: 100%;
+    transform: translate(100%, -50%);
+  }
+
+  50% {
+    left: 50%;
+    transform: translate(-54%, -50%);
+  }
+
+  100% {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes slideHideModal {
+  from {
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  to {
+    left: 100%;
+    transform: translate(100%, -50%);
+  }
+}

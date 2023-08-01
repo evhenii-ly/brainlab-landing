@@ -1,0 +1,28 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: rem(60);
+  padding: rem(17) rem(30);
+  text-align: center;
+  font-size: rem(14);
+  line-height: rem(18);
+  text-transform: uppercase;
+  letter-spacing: rem(0.14);
+  border: rem(1) solid transparent;
+  border-radius: 61px;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &[disabled] {
+    cursor: default;
+    opacity: 0.6;
+  }
+
+  @include mq('tablet-small') {
+    min-height: rem(44);
+    padding: rem(14) rem(25);
+    font-size: rem(12);
+    line-height: rem(15);
+  }
+}

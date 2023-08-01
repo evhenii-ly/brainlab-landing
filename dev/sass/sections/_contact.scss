@@ -1,0 +1,59 @@
+.section-contact {
+  padding-bottom: rem(95);
+
+  @include mq('tablet-small') {
+    padding-bottom: rem(34);
+  }
+
+  &__container {
+    padding-top: rem(40);
+
+    @include mq('tablet-small') {
+      padding-top: rem(72);
+    }
+  }
+
+  &__heading {
+    max-width: 893px;
+    margin-bottom: 0;
+    font-size: rem(90);
+    font-weight: 700;
+    line-height: rem(117);
+    letter-spacing: rem(0.9);
+
+    @include mq('laptop') {
+      max-width: rem(400);
+      font-size: rem(60);
+      line-height: rem(80);
+    }
+
+    @include mq('tablet-small') {
+      max-width: rem(260);
+      font-size: rem(42);
+      line-height: rem(55);
+    }
+  }
+
+  &__image {
+    @include mq('tablet-small') {
+      max-width: rem(69);
+    }
+  }
+
+  &__checkbox {
+    margin-bottom: rem(60);
+    color: $gray;
+
+    @include mq('tablet-small') {
+      margin-bottom: rem(30);
+    }
+  }
+
+  &__checkbox-label {
+    margin: 0 auto;
+  }
+
+  &__button {
+    width: 100%;
+  }
+}

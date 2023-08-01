@@ -1,0 +1,81 @@
+.app-header {
+  z-index: z-index(header);
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: calc(100% - var(--scrollWidth));
+  height: var(--headerHeight);
+  padding: rem(30) 0;
+  color: $white;
+  transition: background-color 0.2s;
+  backdrop-filter: blur(5px);
+
+  @include mq('tablet-small') {
+    padding: rem(10) 0;
+  }
+
+  &--background {
+    background-color: rgba($white, 0.05);
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__burger {
+    z-index: z-index(default);
+
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @include mq('laptop') {
+      &.burger--active {
+        left: calc(50% - var(--containerIndentX));
+      }
+    }
+
+    @include mq('tablet-small') {
+      &.burger--active {
+        left: unset;
+        right: 0;
+      }
+    }
+  }
+
+  &__contact {
+    z-index: z-index(default);
+
+    position: relative;
+    min-height: rem(52);
+    margin-left: auto;
+
+    @include mq('tablet-small') {
+      display: none;
+    }
+  }
+
+  &__nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(50% + var(--burger-size) / 2 + rem(60));
+    height: 100vh;
+    height: 100dvh; //safari fix
+    transform: translateX(100%);
+    background: $black;
+    transition: transform 0.3s;
+
+    &--active {
+      transform: translateX(0);
+    }
+
+    @include mq('tablet-small') {
+      width: 100%;
+    }
+  }
+}

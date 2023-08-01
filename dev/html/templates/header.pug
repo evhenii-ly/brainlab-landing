@@ -1,0 +1,103 @@
+header#appHeader.app-header
+  div.container.__container
+    button(
+      id="burger"
+      class="burger app-header__burger"
+      type="button"
+      aria-label="Toggle navigation"
+    )
+    button(
+      class="button button--ghost app-header__contact scroll-button-js"
+      type="button"
+      data-target="sectionContact"
+      ) Contact us
+  div(
+    id="navPanel"
+    class="header-nav app-header__nav"
+  )
+    div.container.header-nav__container
+      nav.header-nav__links
+        a(
+        class="header-nav__link"
+        href="#"
+        data-animate
+        data-animation-start-name="fadeInAnimation"
+        data-animation-end-name="fadeOutAnimation"
+        data-delay-start="0.3"
+        data-delay-end="0.6"
+        ) Main
+
+        a(
+          class="header-nav__link"
+          href="#"
+          data-animate
+          data-animation-start-name="fadeInAnimation"
+          data-animation-end-name="fadeOutAnimation"
+          data-delay-start="0.6"
+          data-delay-end="0.9"
+        ) Services
+
+        a(
+          class="header-nav__link"
+          href="#"
+          data-animate
+          data-animation-start-name="fadeInAnimation"
+          data-animation-end-name="fadeOutAnimation"
+          data-delay-start="0.9"
+          data-delay-end="1.2"
+        ) About
+
+      div(
+        class="header-nav__footer"
+        data-animate
+        data-animation-start-name="slideFromTopAnimation"
+        data-animation-end-name="slideToTopAnimation"
+        data-delay-start="1.2"
+        data-delay-end="0.3"
+      )
+        div.header-nav__footer-block.header-nav__footer-contact
+          span.header-nav__footer-title Contact
+          div.header-nav__footer-content
+            span.header-nav__footer-text Email:&nbsp;
+              a(
+              href="mailto:hello@dotdots.net"
+              rel="nofollow"
+              ) hello@dotdots.net
+            span.header-nav__footer-text Telegram:&nbsp;
+              a(
+                href="https://t.me/johnizaguirre"
+                target="_blank"
+                rel="noopener noreferrer"
+              ) @johnizaguirre
+
+        address.header-nav__footer-block.header-nav__footer-address
+          span.header-nav__footer-title Germany
+          span.header-nav__footer-text.
+            Potsdamer Str. 138 #[br]
+            10783, Berlin
+
+        div.header-nav__footer-block.header-nav__footer-social
+          span.header-nav__footer-title Social
+          div.socials.header-nav__footer-socials
+            a(
+              class="socials__link"
+              href="#"
+              rel="noopener noreferrer"
+              target="_blank"
+            )
+              - var className = 'socials__icon'
+              include icons/socials/linkedin
+            a(
+              class="socials__link"
+              href="#"
+              rel="noopener noreferrer"
+              target="_blank"
+            )
+              - var className = 'socials__icon'
+              include icons/socials/medium
+
+        button(
+          class="button button--ghost header-nav__contact scroll-button-js"
+          type="button"
+          data-target="sectionContact"
+        ) Contact us

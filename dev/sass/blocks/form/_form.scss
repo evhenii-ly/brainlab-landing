@@ -1,0 +1,152 @@
+.form {
+  --checkbox-size: #{rem(24)};
+  --checkbox-marker-indent: #{rem(3)};
+  --checkbox-marker: calc(var(--checkbox-size) - var(--checkbox-marker-indent) * 2);
+
+  $this: &;
+  $field--Indent-x: 0;
+  $field--Indent-y: rem(11);
+  $field-icon--Size: rem(30);
+  $field-icon--Indent: rem(20);
+
+  &__field-label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: rem(20);
+    letter-spacing: rem(0.32);
+
+    @include mq('tablet-small') {
+      margin-bottom: rem(15);
+      font-size: rem(14);
+      line-height: rem(18);
+      letter-spacing: rem(0.28);
+    }
+  }
+
+  &__label-link {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: rem(1);
+      background-color: $gray;
+      transition: background-color 0.2s;
+    }
+
+    &:hover {
+      color: $white;
+    }
+
+    &:hover::after {
+      background-color: $white;
+    }
+  }
+
+  &__field {
+    width: 100%;
+    height: rem(43);
+    padding: $field--Indent-y $field--Indent-x;
+    color: $white;
+    background: none;
+    border: none;
+    border-bottom: rem(1) solid $white;
+    border-radius: 0;
+    overflow: hidden;
+    transition: border-color 0.4s;
+
+    &::placeholder {
+      color: $white;
+    }
+
+    &:hover {
+      border-color: rgba($white, 0.5);
+    }
+
+    &:focus {
+      border-color: rgba($color-accent, 0.7);
+    }
+
+    @include mq('tablet-small') {
+      height: rem(34);
+    }
+
+    &--icon {
+      padding-right: calc(#{$field--Indent-x} * 2 + #{$field-icon--Indent});
+    }
+
+    &--secondary {
+      border-color: $color-primary;
+      background: none;
+    }
+
+    &--area {
+      min-height: rem(115);
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    opacity: 0;
+
+    @media (hover: hover) {
+      &:hover + #{$this}__checkbox-label::after {
+        opacity: 0.6;
+        transform: scale(0.5);
+      }
+    }
+
+    &:checked + #{$this}__checkbox-label::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  &__checkbox-label {
+    position: relative;
+    padding-left: calc(var(--checkbox-size) + #{rem(20)});
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(var(--checkbox-marker-indent) + #{rem(2)});
+      left: var(--checkbox-marker-indent);
+      width: var(--checkbox-marker);
+      height: var(--checkbox-marker);
+      background-color: $color-accent;
+      opacity: 0;
+      transform: scale(0);
+      transform-origin: center;
+      will-change: transform;
+      transition: transform 0.2s, opacity 0.2s;
+
+      @include mq('tablet-small') {
+        top: calc(var(--checkbox-marker-indent) + #{rem(-3)});
+      }
+    }
+
+    @include mq('tablet-small') {
+      font-size: rem(14);
+      line-height: rem(18);
+    }
+  }
+
+  &__checkbox-label::before {
+    content:'';
+    position: absolute;
+    top: rem(2);
+    left: 0;
+    width: var(--checkbox-size);
+    height: var(--checkbox-size);
+    border: rem(1) solid $gray;
+
+    @include mq('tablet-small') {
+      top: rem(-3);
+    }
+  }
+}
